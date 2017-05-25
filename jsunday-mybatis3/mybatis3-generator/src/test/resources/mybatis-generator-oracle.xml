@@ -15,6 +15,7 @@
         <context> (1个或多个)  生成代码配置
     -->
 
+    <classPathEntry location="D:\IdeaProjects\jsunday\jsunday-mybatis3\mybatis3-generator\lib\ojdbc14.jar"></classPathEntry>
 
     <!-- Oracle 数据库生成代码配置 -->
     <context id="oracleContext" targetRuntime="MyBatis3Simple" defaultModelType="flat">
@@ -36,6 +37,7 @@
 
         <!-- 类型解析 -->
         <javaTypeResolver>
+            <!-- 不强制BigDecimals,自适配Oracle Number类型 -->
             <property name="forceBigDecimals" value="false" />
         </javaTypeResolver>
 
@@ -43,7 +45,7 @@
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.zingson.xxx.xml"  targetProject="D:\IdeaProjects\jsunday\jsunday-mybatis3\mybatis3-generator\src\main\resources"/>
+        <sqlMapGenerator targetPackage="com.zingson.xxx.mapper"  targetProject="D:\IdeaProjects\jsunday\jsunday-mybatis3\mybatis3-generator\src\main\resources"/>
 
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.zingson.xxx.dao"  targetProject="D:\IdeaProjects\jsunday\jsunday-mybatis3\mybatis3-generator\src\main\java"/>
 

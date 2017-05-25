@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zingson.xxx.dao.BlogMapper">
-
   <resultMap id="BaseResultMap" type="com.zingson.xxx.model.Blog">
     <result column="ID" jdbcType="DECIMAL" property="id" />
     <result column="TITLE" jdbcType="CHAR" property="title" />
@@ -11,18 +10,37 @@
     <result column="USER_NUMBER" jdbcType="DECIMAL" property="userNumber" />
     <result column="PRICE" jdbcType="DECIMAL" property="price" />
   </resultMap>
-
   <insert id="insert" parameterType="com.zingson.xxx.model.Blog">
-    insert into ZT_BLOG (ID, TITLE, USER_NAME,  CONTENT, USER_AGE, USER_NUMBER, PRICE)
+    insert into ZT_BLOG (ID, TITLE, USER_NAME, 
+      CONTENT, USER_AGE, USER_NUMBER, 
+      PRICE)
     values (#{id,jdbcType=DECIMAL}, #{title,jdbcType=CHAR}, #{userName,jdbcType=CHAR}, 
       #{content,jdbcType=VARCHAR}, #{userAge,jdbcType=DECIMAL}, #{userNumber,jdbcType=DECIMAL}, 
       #{price,jdbcType=DECIMAL})
   </insert>
-
   <select id="selectAll" resultMap="BaseResultMap">
     select ID, TITLE, USER_NAME, CONTENT, USER_AGE, USER_NUMBER, PRICE
     from ZT_BLOG
   </select>
-
-
+  <resultMap id="BaseResultMap" type="com.zingson.xxx.model.Blog">
+    <result column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="TITLE" jdbcType="CHAR" property="title" />
+    <result column="USER_NAME" jdbcType="CHAR" property="userName" />
+    <result column="CONTENT" jdbcType="VARCHAR" property="content" />
+    <result column="USER_AGE" jdbcType="DECIMAL" property="userAge" />
+    <result column="USER_NUMBER" jdbcType="DECIMAL" property="userNumber" />
+    <result column="PRICE" jdbcType="DECIMAL" property="price" />
+  </resultMap>
+  <insert id="insert" parameterType="com.zingson.xxx.model.Blog">
+    insert into ZT_BLOG (ID, TITLE, USER_NAME, 
+      CONTENT, USER_AGE, USER_NUMBER, 
+      PRICE)
+    values (#{id,jdbcType=DECIMAL}, #{title,jdbcType=CHAR}, #{userName,jdbcType=CHAR}, 
+      #{content,jdbcType=VARCHAR}, #{userAge,jdbcType=DECIMAL}, #{userNumber,jdbcType=DECIMAL}, 
+      #{price,jdbcType=DECIMAL})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ID, TITLE, USER_NAME, CONTENT, USER_AGE, USER_NUMBER, PRICE
+    from ZT_BLOG
+  </select>
 </mapper>
