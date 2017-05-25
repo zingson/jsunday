@@ -1,2 +1,3 @@
 rootProject.name = 'jsunday-mybatis3'
+include 'mybatis3-generator'
 
