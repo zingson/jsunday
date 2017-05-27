@@ -1,0 +1,41 @@
+group 'com.zingson.jsunday'
+version '1.0'
+
+
+allprojects {
+
+}
+
+subprojects {
+
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    [compileJava,compileTestJava,javadoc]*.options*.encoding = 'UTF-8'
+    compileJava*.options*.compilerArgs=[/*"-Xlint:unchecked",*/ "-g:vars", "-g:lines", "-g:source"]
+
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+        //maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        compile(
+                //log4j2
+                'org.apache.logging.log4j:log4j-api:2.8.1',
+                'org.apache.logging.log4j:log4j-core:2.8.1',
+                'org.apache.logging.log4j:log4j-slf4j-impl:2.8.1',
+
+                //lsf4j
+                'org.slf4j:slf4j-api:1.7.25',
+        )
+        testCompile(
+                'junit:junit:4.12',
+        )
+    }
+}
