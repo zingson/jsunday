@@ -1,2 +1,3 @@
 rootProject.name = 'jsunday-spring'
+include 'spring4+mybatis3'
 

@@ -1,12 +1,7 @@
 group 'com.zingson.jsunday'
 version '1.0'
 
-
 allprojects {
-
-}
-
-subprojects {
 
     apply plugin: 'java'
 
@@ -20,15 +15,19 @@ subprojects {
         mavenLocal()
         mavenCentral()
         jcenter()
-        maven { url 'https://jitpack.io' }
+        //maven { url 'https://jitpack.io' }
     }
+
+}
+
+subprojects {
 
     dependencies {
         compile(
                 //log4j2
                 'org.apache.logging.log4j:log4j-api:2.4.1',
                 'org.apache.logging.log4j:log4j-core:2.4.1',
-                'org.apache.logging.log4j:log4j-slf4j-impl:2.8.1',
+                'org.apache.logging.log4j:log4j-slf4j-impl:2.4.1',
 
                 //lsf4j
                 'org.slf4j:slf4j-api:1.7.25',

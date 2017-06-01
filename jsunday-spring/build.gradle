@@ -2,22 +2,72 @@ group 'com.zingson.jsunday'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'war'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+allprojects {
 
-[compileJava,compileTestJava,javadoc]*.options*.encoding='UTF-8'
-compileJava*.options*.compilerArgs=[/*"-Xlint:unchecked",*/ "-g:vars", "-g:lines", "-g:source"]
-javadoc*.options*.encoding = 'UTF-8'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 
+    [compileJava,compileTestJava,javadoc]*.options*.encoding = 'UTF-8'
+    compileJava*.options*.compilerArgs=[/*"-Xlint:unchecked",*/ "-g:vars", "-g:lines", "-g:source"]
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-    jcenter()
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+        //maven { url 'https://jitpack.io' }
+    }
+
 }
 
+subprojects {
+
+
+
+}
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile(
+            //log4j2
+            'org.apache.logging.log4j:log4j-api:2.4.1',
+            'org.apache.logging.log4j:log4j-core:2.4.1',
+            'org.apache.logging.log4j:log4j-slf4j-impl:2.4.1',
+
+            //lsf4j
+            'org.slf4j:slf4j-api:1.7.25',
+
+            //Spring Framework
+            'org.springframework:spring-context:4.2.3.RELEASE',
+            'org.springframework:spring-context-support:4.2.3.RELEASE',
+            'org.springframework:spring-jdbc:4.2.3.RELEASE',
+            'org.springframework:spring-webmvc:4.2.3.RELEASE',
+
+            //Spring aop
+            'org.springframework:spring-aop:4.2.3.RELEASE',
+            'org.aspectj:aspectjrt:1.8.5',
+            'org.aspectj:aspectjweaver:1.8.5',
+            'cglib:cglib:3.2.0',
+
+            //Spring Security
+            //'org.springframework.security:spring-security-web:4.0.3.RELEASE',
+
+            //Freemarker
+            //'org.freemarker:freemarker:2.3.23',
+
+            //Druid 连接池 与Jdbc driver  Oracle需放入lib或者手动加到maven源
+            'com.alibaba:druid:1.0.11',
+            //oracle10g druid 1.0.11到1.0.20都有错误
+
+            //'mysql:mysql-connector-java:5.1.37',
+
+    )
+    //compile fileTree(dir: 'lib', include: ['ojdbc14.jar'])
+    testCompile(
+            'junit:junit:4.12',
+            'org.springframework:spring-test:4.2.3.RELEASE',
+    )
+    providedCompile(
+            'javax:javaee-api:7.0',
+    )
 }
