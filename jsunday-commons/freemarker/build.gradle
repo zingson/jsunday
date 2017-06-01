@@ -6,12 +6,12 @@ apply plugin: 'java'
 repositories {
     mavenLocal()
     mavenCentral()
-    //jcenter()
-    //maven { url 'https://jitpack.io' }
+    jcenter()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
 
-    compile group: 'org.freemarker', name: 'freemarker', version: '2.3.23'
+    /*compile group: 'org.freemarker', name: 'freemarker', version: '2.3.23'*/
 
 }

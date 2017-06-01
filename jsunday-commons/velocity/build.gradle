@@ -12,9 +12,9 @@ repositories {
 
 dependencies {
 
-    compile(
+    /*compile(
           'org.apache.velocity:velocity:1.7',
 
-    )
+    )*/
 
 }

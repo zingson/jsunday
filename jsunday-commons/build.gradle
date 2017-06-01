@@ -16,19 +16,18 @@ subprojects {
     [compileJava,compileTestJava,javadoc]*.options*.encoding = 'UTF-8'
     compileJava*.options*.compilerArgs=[/*"-Xlint:unchecked",*/ "-g:vars", "-g:lines", "-g:source"]
 
-
     repositories {
         mavenLocal()
         mavenCentral()
         jcenter()
-        //maven { url 'https://jitpack.io' }
+        maven { url 'https://jitpack.io' }
     }
 
     dependencies {
         compile(
                 //log4j2
-                'org.apache.logging.log4j:log4j-api:2.8.1',
-                'org.apache.logging.log4j:log4j-core:2.8.1',
+                'org.apache.logging.log4j:log4j-api:2.4.1',
+                'org.apache.logging.log4j:log4j-core:2.4.1',
                 'org.apache.logging.log4j:log4j-slf4j-impl:2.8.1',
 
                 //lsf4j
@@ -38,4 +37,5 @@ subprojects {
                 'junit:junit:4.12',
         )
     }
+
 }
