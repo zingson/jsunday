@@ -27,6 +27,7 @@ hs_err_pid*
 .svn/
 .cvs/
 .gradle/
+gradle/
 gradle-wrapper.jar
 target/
 build/
