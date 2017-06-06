@@ -1,5 +1,11 @@
 rootProject.name = 'jsunday-union'
-include 'ul-core'
-include 'ul-config'
-include 'ul-web'
+include 'ul-frame'
+include 'ul-deploy'
+
+include 'core-spring4'
+include 'core-cache'
+include 'core-utils'
+include 'core-mybatis3'
+
+
 

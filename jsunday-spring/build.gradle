@@ -63,8 +63,14 @@ subprojects {
                 //Druid 连接池 与Jdbc driver  Oracle需放入lib或者手动加到maven源
                 'com.alibaba:druid:1.0.11',
                 //oracle10g druid 1.0.11到1.0.20都有错误
-
                 //'mysql:mysql-connector-java:5.1.37',
+
+                //Mybatis3
+                'org.mybatis:mybatis:3.4.4',
+                'org.javassist:javassist:3.21.0-GA',
+                'ognl:ognl:3.1.14',
+                'org.mybatis:mybatis-spring:1.3.1',
+                'com.github.pagehelper:pagehelper:5.0.1',
 
         )
         //compile fileTree(dir: 'lib', include: ['ojdbc14.jar'])
