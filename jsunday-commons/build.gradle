@@ -3,6 +3,11 @@ version '1.0'
 
 allprojects {
 
+
+
+}
+
+subprojects {
     apply plugin: 'java'
 
     sourceCompatibility = 1.8
@@ -17,10 +22,6 @@ allprojects {
         jcenter()
         //maven { url 'https://jitpack.io' }
     }
-
-}
-
-subprojects {
 
     dependencies {
         /*compile(
