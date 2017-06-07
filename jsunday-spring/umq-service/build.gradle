@@ -1,0 +1,6 @@
+group 'com.zingson.jsunday'
+
+
+dependencies {
+    compile project(':umq-configuration')
+}

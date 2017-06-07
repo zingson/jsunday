@@ -1,4 +1,6 @@
 rootProject.name = 'jsunday-spring'
-include 'spring4+mybatis3'
-
+include 'umq-configuration'
+include 'umq-service'
+include 'umq-controller'
+include 'umq-deployment'
 

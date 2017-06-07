@@ -73,7 +73,7 @@ subprojects {
                 'com.github.pagehelper:pagehelper:5.0.1',
 
         )
-        //compile fileTree(dir: 'lib', include: ['ojdbc14.jar'])
+        compile fileTree(dir: '../../@library/libs', include: ['*.jar'])
         testCompile(
                 'junit:junit:4.12',
                 'org.springframework:spring-test:4.2.3.RELEASE',
