@@ -3,6 +3,21 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <properties resource="config/config.properties">
+        <property name="driver" value="oracle.driver"></property>
+
+        <!-- 启用占位符指定默认值功能，默认关闭，一般不需要此功能 -->
+        <property name="org.apache.ibatis.parsing.PropertyParser.enable-default-value" value="true"/>
+    </properties>
+    <!-- Mybatis 调整设置，可以改变myBatis运行时的行为 -->
+    <settings>
+        <!--是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN 到经典 Java 属性名 aColumn 的类似映射。默认false-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--当没有为参数提供特定的 JDBC 类型时，为空值指定 JDBC 类型。-->
+        <setting name="jdbcTypeForNull" value="NULL"></setting>
+        <!--当返回行的所有列都是空时，MyBatis默认返回null。 当开启这个设置时，MyBatis会返回一个空实例。 默认false-->
+        <setting name="returnInstanceForEmptyRow" value="true"></setting>
+    </settings>
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
