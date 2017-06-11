@@ -3,11 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <properties resource="config/config.properties">
-        <property name="driver" value="oracle.driver"></property>
-        <property name="driver" value="oracle.driver"></property>
-        <property name="driver" value="oracle.driver"></property>
-        <property name="driver" value="oracle.driver"></property>
+    <properties resource="db.properties">
+        <!-- 优先级低于db.properties -->
+        <property name="db.driver" value="com.mysql.jdbc.Driver"></property>
+        <property name="db.url" value="jdbc:mysql://dev-mysql.s.zingson.com:3306/test"></property>
+        <property name="db.username" value="zingson"></property>
+        <property name="db.password" value="zingson"></property>
 
         <!-- 启用占位符指定默认值功能，默认关闭，一般不需要此功能 -->
         <property name="org.apache.ibatis.parsing.PropertyParser.enable-default-value" value="true"/>
@@ -25,14 +26,14 @@
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="${driver}"/>
-                <property name="url" value="${url}"/>
-                <property name="username" value="${username}"/>
-                <property name="password" value="${password}"/>
+                <property name="driver" value="${db.driver}"/>
+                <property name="url" value="${db.url}"/>
+                <property name="username" value="${db.username}"/>
+                <property name="password" value="${db.password}"/>
             </dataSource>
         </environment>
     </environments>
-    <mappers>
+    <!--<mappers>
         <mapper resource="mapper/sample/BlogMapper.xml"/>
-    </mappers>
+    </mappers>-->
 </configuration>

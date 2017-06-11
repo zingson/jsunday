@@ -7,4 +7,5 @@ dependencies {
             //Mybatis Generator
             'org.mybatis.generator:mybatis-generator-core:1.3.5'
     )
+    compile fileTree(dir: '../../@library/libs', include: ['*.jar'])
 }

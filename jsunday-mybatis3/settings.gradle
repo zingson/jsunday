@@ -1,4 +1,6 @@
 rootProject.name = 'jsunday-mybatis3'
 include 'mybatis3-generator'
 include 'mybatis3-example'
+include 'mybatis3-mysql'
+include 'mybatis3-oracle'
 
