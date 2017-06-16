@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unionlive.waimai.mapper.UltabWmOrderInfoMapper">
+  <resultMap id="BaseResultMap" type="com.unionlive.waimai.model.UltabWmOrderInfo">
+    <result column="ORG_ID" jdbcType="CHAR" property="orgId" />
+    <result column="MERC_ID" jdbcType="CHAR" property="mercId" />
+    <result column="SHOP_ID" jdbcType="CHAR" property="shopId" />
+    <result column="SHOP_NAME" jdbcType="CHAR" property="shopName" />
+    <result column="CHANNEL_ORDERID" jdbcType="CHAR" property="channelOrderid" />
+    <result column="ORDER_ID" jdbcType="CHAR" property="orderId" />
+    <result column="VIEW_ORDER_ID" jdbcType="CHAR" property="viewOrderId" />
+    <result column="TIMESTAMP" jdbcType="CHAR" property="timestamp" />
+    <result column="ORDER_DATE" jdbcType="CHAR" property="orderDate" />
+    <result column="ORDER_TIME" jdbcType="CHAR" property="orderTime" />
+    <result column="CONFIRM_DATE" jdbcType="CHAR" property="confirmDate" />
+    <result column="CONFIRM_TIME" jdbcType="CHAR" property="confirmTime" />
+    <result column="TRACE_NO" jdbcType="CHAR" property="traceNo" />
+    <result column="STATUS" jdbcType="DECIMAL" property="status" />
+    <result column="SEND_IMMEDIATELY" jdbcType="CHAR" property="sendImmediately" />
+    <result column="EXPECT_DATE" jdbcType="CHAR" property="expectDate" />
+    <result column="EXPECT_TIME" jdbcType="CHAR" property="expectTime" />
+    <result column="DELIVER_AMOUNT" jdbcType="DECIMAL" property="deliverAmount" />
+    <result column="PACKAGE_AMOUNT" jdbcType="DECIMAL" property="packageAmount" />
+    <result column="DISCOUNT_AMOUNT" jdbcType="DECIMAL" property="discountAmount" />
+    <result column="SHOP_AMOUNT" jdbcType="DECIMAL" property="shopAmount" />
+    <result column="ORDER_AMOUNT" jdbcType="DECIMAL" property="orderAmount" />
+    <result column="USER_AMOUNT" jdbcType="DECIMAL" property="userAmount" />
+    <result column="PAT_TYPE" jdbcType="CHAR" property="patType" />
+    <result column="INVOICE_TYPE" jdbcType="DECIMAL" property="invoiceType" />
+    <result column="INVOICE_TITLE" jdbcType="CHAR" property="invoiceTitle" />
+    <result column="DELIVERY_TYPE" jdbcType="DECIMAL" property="deliveryType" />
+    <result column="USER_NAME" jdbcType="CHAR" property="userName" />
+    <result column="USER_PHONE" jdbcType="CHAR" property="userPhone" />
+    <result column="USER_SEX" jdbcType="DECIMAL" property="userSex" />
+    <result column="USER_ADDR" jdbcType="CHAR" property="userAddr" />
+    <result column="LONGITUED_BD" jdbcType="CHAR" property="longituedBd" />
+    <result column="LATITUED_BD" jdbcType="CHAR" property="latituedBd" />
+    <result column="LONGITUED_GD" jdbcType="CHAR" property="longituedGd" />
+    <result column="LATITUED_GD" jdbcType="CHAR" property="latituedGd" />
+    <result column="SHIPPER_PHONE" jdbcType="CHAR" property="shipperPhone" />
+    <result column="SHIPPER_NAME" jdbcType="CHAR" property="shipperName" />
+    <result column="CHANNEL_ID" jdbcType="CHAR" property="channelId" />
+    <result column="DELIVER_DATE" jdbcType="CHAR" property="deliverDate" />
+    <result column="DELIVER_TIME" jdbcType="CHAR" property="deliverTime" />
+    <result column="CANCEL_TYPE" jdbcType="DECIMAL" property="cancelType" />
+    <result column="CANCEL_REASON" jdbcType="CHAR" property="cancelReason" />
+    <result column="CANCEL_DATE" jdbcType="CHAR" property="cancelDate" />
+    <result column="CANCEL_TIME" jdbcType="CHAR" property="cancelTime" />
+    <result column="COMPLETE_DATE" jdbcType="CHAR" property="completeDate" />
+    <result column="COMPLETE_TIME" jdbcType="CHAR" property="completeTime" />
+    <result column="REMARK" jdbcType="CHAR" property="remark" />
+    <result column="ACT_ID" jdbcType="CHAR" property="actId" />
+    <result column="DISCOUNT_TYPE" jdbcType="CHAR" property="discountType" />
+    <result column="CHANNEL_RATE" jdbcType="DECIMAL" property="channelRate" />
+    <result column="SHOP_RATE" jdbcType="DECIMAL" property="shopRate" />
+    <result column="AGENT_RATE" jdbcType="DECIMAL" property="agentRate" />
+    <result column="LOGISTICS_RATE" jdbcType="DECIMAL" property="logisticsRate" />
+    <result column="ORDER_TYPE" jdbcType="DECIMAL" property="orderType" />
+    <result column="UMQ_PROFIT_TYPE" jdbcType="DECIMAL" property="umqProfitType" />
+    <result column="UMQ_PROFIT_AMOUNT" jdbcType="DECIMAL" property="umqProfitAmount" />
+    <result column="CARD_NO" jdbcType="CHAR" property="cardNo" />
+    <result column="ORDER_SEQ" jdbcType="DECIMAL" property="orderSeq" />
+    <result column="AUTO_ORDER" jdbcType="DECIMAL" property="autoOrder" />
+    <result column="DELIVERY_STATUS" jdbcType="DECIMAL" property="deliveryStatus" />
+    <result column="DELIVERY_CNL_REASON" jdbcType="DECIMAL" property="deliveryCnlReason" />
+    <result column="LAST_TRANS_DATE" jdbcType="CHAR" property="lastTransDate" />
+    <result column="LAST_TRANS_TIME" jdbcType="CHAR" property="lastTransTime" />
+    <result column="NOTICE_STATUS" jdbcType="DECIMAL" property="noticeStatus" />
+    <result column="SHOP_AUTO_ORDER" jdbcType="DECIMAL" property="shopAutoOrder" />
+    <result column="CHANNEL_SHOP_ID" jdbcType="CHAR" property="channelShopId" />
+    <result column="STATUS_TEXT" jdbcType="VARCHAR" property="statusText" />
+    <result column="SHIPPER_STATUS" jdbcType="VARCHAR" property="shipperStatus" />
+    <result column="SHIPPER_STATUS_TEXT" jdbcType="VARCHAR" property="shipperStatusText" />
+  </resultMap>
+  <insert id="insert" parameterType="com.unionlive.waimai.model.UltabWmOrderInfo">
+    insert into ULTAB_WM_ORDERINFO (ORG_ID, MERC_ID, SHOP_ID, 
+      SHOP_NAME, CHANNEL_ORDERID, ORDER_ID, 
+      VIEW_ORDER_ID, TIMESTAMP, ORDER_DATE, 
+      ORDER_TIME, CONFIRM_DATE, CONFIRM_TIME, 
+      TRACE_NO, STATUS, SEND_IMMEDIATELY, 
+      EXPECT_DATE, EXPECT_TIME, DELIVER_AMOUNT, 
+      PACKAGE_AMOUNT, DISCOUNT_AMOUNT, SHOP_AMOUNT, 
+      ORDER_AMOUNT, USER_AMOUNT, PAT_TYPE, 
+      INVOICE_TYPE, INVOICE_TITLE, DELIVERY_TYPE, 
+      USER_NAME, USER_PHONE, USER_SEX, 
+      USER_ADDR, LONGITUED_BD, LATITUED_BD, 
+      LONGITUED_GD, LATITUED_GD, SHIPPER_PHONE, 
+      SHIPPER_NAME, CHANNEL_ID, DELIVER_DATE, 
+      DELIVER_TIME, CANCEL_TYPE, CANCEL_REASON, 
+      CANCEL_DATE, CANCEL_TIME, COMPLETE_DATE, 
+      COMPLETE_TIME, REMARK, ACT_ID, 
+      DISCOUNT_TYPE, CHANNEL_RATE, SHOP_RATE, 
+      AGENT_RATE, LOGISTICS_RATE, ORDER_TYPE, 
+      UMQ_PROFIT_TYPE, UMQ_PROFIT_AMOUNT, CARD_NO, 
+      ORDER_SEQ, AUTO_ORDER, DELIVERY_STATUS, 
+      DELIVERY_CNL_REASON, LAST_TRANS_DATE, LAST_TRANS_TIME, 
+      NOTICE_STATUS, SHOP_AUTO_ORDER, CHANNEL_SHOP_ID, 
+      STATUS_TEXT, SHIPPER_STATUS, SHIPPER_STATUS_TEXT
+      )
+    values (#{orgId,jdbcType=CHAR}, #{mercId,jdbcType=CHAR}, #{shopId,jdbcType=CHAR}, 
+      #{shopName,jdbcType=CHAR}, #{channelOrderid,jdbcType=CHAR}, #{orderId,jdbcType=CHAR}, 
+      #{viewOrderId,jdbcType=CHAR}, #{timestamp,jdbcType=CHAR}, #{orderDate,jdbcType=CHAR}, 
+      #{orderTime,jdbcType=CHAR}, #{confirmDate,jdbcType=CHAR}, #{confirmTime,jdbcType=CHAR}, 
+      #{traceNo,jdbcType=CHAR}, #{status,jdbcType=DECIMAL}, #{sendImmediately,jdbcType=CHAR}, 
+      #{expectDate,jdbcType=CHAR}, #{expectTime,jdbcType=CHAR}, #{deliverAmount,jdbcType=DECIMAL}, 
+      #{packageAmount,jdbcType=DECIMAL}, #{discountAmount,jdbcType=DECIMAL}, #{shopAmount,jdbcType=DECIMAL}, 
+      #{orderAmount,jdbcType=DECIMAL}, #{userAmount,jdbcType=DECIMAL}, #{patType,jdbcType=CHAR}, 
+      #{invoiceType,jdbcType=DECIMAL}, #{invoiceTitle,jdbcType=CHAR}, #{deliveryType,jdbcType=DECIMAL}, 
+      #{userName,jdbcType=CHAR}, #{userPhone,jdbcType=CHAR}, #{userSex,jdbcType=DECIMAL}, 
+      #{userAddr,jdbcType=CHAR}, #{longituedBd,jdbcType=CHAR}, #{latituedBd,jdbcType=CHAR}, 
+      #{longituedGd,jdbcType=CHAR}, #{latituedGd,jdbcType=CHAR}, #{shipperPhone,jdbcType=CHAR}, 
+      #{shipperName,jdbcType=CHAR}, #{channelId,jdbcType=CHAR}, #{deliverDate,jdbcType=CHAR}, 
+      #{deliverTime,jdbcType=CHAR}, #{cancelType,jdbcType=DECIMAL}, #{cancelReason,jdbcType=CHAR}, 
+      #{cancelDate,jdbcType=CHAR}, #{cancelTime,jdbcType=CHAR}, #{completeDate,jdbcType=CHAR}, 
+      #{completeTime,jdbcType=CHAR}, #{remark,jdbcType=CHAR}, #{actId,jdbcType=CHAR}, 
+      #{discountType,jdbcType=CHAR}, #{channelRate,jdbcType=DECIMAL}, #{shopRate,jdbcType=DECIMAL}, 
+      #{agentRate,jdbcType=DECIMAL}, #{logisticsRate,jdbcType=DECIMAL}, #{orderType,jdbcType=DECIMAL}, 
+      #{umqProfitType,jdbcType=DECIMAL}, #{umqProfitAmount,jdbcType=DECIMAL}, #{cardNo,jdbcType=CHAR}, 
+      #{orderSeq,jdbcType=DECIMAL}, #{autoOrder,jdbcType=DECIMAL}, #{deliveryStatus,jdbcType=DECIMAL}, 
+      #{deliveryCnlReason,jdbcType=DECIMAL}, #{lastTransDate,jdbcType=CHAR}, #{lastTransTime,jdbcType=CHAR}, 
+      #{noticeStatus,jdbcType=DECIMAL}, #{shopAutoOrder,jdbcType=DECIMAL}, #{channelShopId,jdbcType=CHAR}, 
+      #{statusText,jdbcType=VARCHAR}, #{shipperStatus,jdbcType=VARCHAR}, #{shipperStatusText,jdbcType=VARCHAR}
+      )
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ORG_ID, MERC_ID, SHOP_ID, SHOP_NAME, CHANNEL_ORDERID, ORDER_ID, VIEW_ORDER_ID, 
+    TIMESTAMP, ORDER_DATE, ORDER_TIME, CONFIRM_DATE, CONFIRM_TIME, TRACE_NO, STATUS, 
+    SEND_IMMEDIATELY, EXPECT_DATE, EXPECT_TIME, DELIVER_AMOUNT, PACKAGE_AMOUNT, DISCOUNT_AMOUNT, 
+    SHOP_AMOUNT, ORDER_AMOUNT, USER_AMOUNT, PAT_TYPE, INVOICE_TYPE, INVOICE_TITLE, DELIVERY_TYPE, 
+    USER_NAME, USER_PHONE, USER_SEX, USER_ADDR, LONGITUED_BD, LATITUED_BD, LONGITUED_GD, 
+    LATITUED_GD, SHIPPER_PHONE, SHIPPER_NAME, CHANNEL_ID, DELIVER_DATE, DELIVER_TIME, 
+    CANCEL_TYPE, CANCEL_REASON, CANCEL_DATE, CANCEL_TIME, COMPLETE_DATE, COMPLETE_TIME, 
+    REMARK, ACT_ID, DISCOUNT_TYPE, CHANNEL_RATE, SHOP_RATE, AGENT_RATE, LOGISTICS_RATE, 
+    ORDER_TYPE, UMQ_PROFIT_TYPE, UMQ_PROFIT_AMOUNT, CARD_NO, ORDER_SEQ, AUTO_ORDER, DELIVERY_STATUS, 
+    DELIVERY_CNL_REASON, LAST_TRANS_DATE, LAST_TRANS_TIME, NOTICE_STATUS, SHOP_AUTO_ORDER, 
+    CHANNEL_SHOP_ID, STATUS_TEXT, SHIPPER_STATUS, SHIPPER_STATUS_TEXT
+    from ULTAB_WM_ORDERINFO
+  </select>
+</mapper>

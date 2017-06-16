@@ -3,13 +3,15 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <properties resource="db.properties">
-        <!-- 优先级低于db.properties -->
-        <property name="db.driver" value="com.mysql.jdbc.Driver"></property>
-        <property name="db.url" value="jdbc:mysql://dev-mysql.s.zingson.com:3306/test"></property>
-        <property name="db.username" value="zingson"></property>
-        <property name="db.password" value="zingson"></property>
 
+    <!--
+    配置文件中的位置必须符合要求，否则会报错，顺序如下:
+    properties?, settings?, typeAliases?, typeHandlers?, objectFactory?,objectWrapperFactory?, plugins?,
+    environments?, databaseIdProvider?, mappers?
+    -->
+
+
+    <properties resource="db.properties">
         <!-- 启用占位符指定默认值功能，默认关闭，一般不需要此功能 -->
         <property name="org.apache.ibatis.parsing.PropertyParser.enable-default-value" value="true"/>
     </properties>
@@ -22,6 +24,15 @@
         <!--当返回行的所有列都是空时，MyBatis默认返回null。 当开启这个设置时，MyBatis会返回一个空实例。 默认false-->
         <setting name="returnInstanceForEmptyRow" value="true"></setting>
     </settings>
+
+    <plugins>
+        <!-- 插件介绍文档：https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md  -->
+        <!-- com.github.pagehelper为PageHelper类所在包名 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="rowBoundsWithCount" value="true"/>
+        </plugin>
+    </plugins>
+
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
@@ -33,7 +44,8 @@
             </dataSource>
         </environment>
     </environments>
-    <!--<mappers>
-        <mapper resource="mapper/sample/BlogMapper.xml"/>
-    </mappers>-->
+    <mappers>
+        <mapper resource="com/unionlive/waimai/mapper/UltabWmOrderInfoMapper.xml"/>
+        <mapper resource="com/unionlive/waimai/mapper/UltabWmOrderDetailMapper.xml"/>
+    </mappers>
 </configuration>

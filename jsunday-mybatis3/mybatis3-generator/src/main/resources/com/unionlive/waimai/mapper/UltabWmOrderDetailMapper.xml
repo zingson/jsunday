@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unionlive.waimai.mapper.UltabWmOrderDetailMapper">
+  <resultMap id="BaseResultMap" type="com.unionlive.waimai.model.UltabWmOrderDetail">
+    <result column="ORG_ID" jdbcType="CHAR" property="orgId" />
+    <result column="MERC_ID" jdbcType="CHAR" property="mercId" />
+    <result column="SHOP_ID" jdbcType="CHAR" property="shopId" />
+    <result column="ORDER_ID" jdbcType="CHAR" property="orderId" />
+    <result column="PROD_ID" jdbcType="CHAR" property="prodId" />
+    <result column="PROD_NUM" jdbcType="DECIMAL" property="prodNum" />
+    <result column="PROD_PRICE" jdbcType="DECIMAL" property="prodPrice" />
+    <result column="PROD_AMOUNT" jdbcType="DECIMAL" property="prodAmount" />
+    <result column="PROD_NAME" jdbcType="CHAR" property="prodName" />
+    <result column="CHANNEL_PROD_ID" jdbcType="CHAR" property="channelProdId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.unionlive.waimai.model.UltabWmOrderDetail">
+    insert into ULTAB_WM_ORDERDETAIL (ORG_ID, MERC_ID, SHOP_ID, 
+      ORDER_ID, PROD_ID, PROD_NUM, 
+      PROD_PRICE, PROD_AMOUNT, PROD_NAME, 
+      CHANNEL_PROD_ID)
+    values (#{orgId,jdbcType=CHAR}, #{mercId,jdbcType=CHAR}, #{shopId,jdbcType=CHAR}, 
+      #{orderId,jdbcType=CHAR}, #{prodId,jdbcType=CHAR}, #{prodNum,jdbcType=DECIMAL}, 
+      #{prodPrice,jdbcType=DECIMAL}, #{prodAmount,jdbcType=DECIMAL}, #{prodName,jdbcType=CHAR}, 
+      #{channelProdId,jdbcType=CHAR})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ORG_ID, MERC_ID, SHOP_ID, ORDER_ID, PROD_ID, PROD_NUM, PROD_PRICE, PROD_AMOUNT, 
+    PROD_NAME, CHANNEL_PROD_ID
+    from ULTAB_WM_ORDERDETAIL
+  </select>
+</mapper>
