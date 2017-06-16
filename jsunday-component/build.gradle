@@ -1,0 +1,57 @@
+group 'com.zingson.component'
+version '1.0-SNAPSHOT'
+
+
+apply plugin: 'idea'
+idea {
+    project {
+        languageLevel = '1.8'
+        vcs = 'Git'
+    }
+}
+
+allprojects {
+
+}
+
+subprojects {
+    apply plugin: 'java'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    [compileJava,compileTestJava,javadoc]*.options*.encoding = 'UTF-8'
+    compileJava*.options*.compilerArgs=[/*"-Xlint:unchecked",*/ "-g:vars", "-g:lines", "-g:source"]
+    //javadoc*.options*.encoding = 'UTF-8'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+        //maven { url 'http://maven.aliyun.com/nexus/content/groups/public'}
+        //maven { url 'https://repo1.maven.org/maven2' }
+    }
+
+    dependencies {
+        compile(
+
+                //log4j2
+                'org.apache.logging.log4j:log4j-api:2.8.1',
+                'org.apache.logging.log4j:log4j-core:2.8.1',
+                'org.apache.logging.log4j:log4j-slf4j-impl:2.8.1',
+                'org.slf4j:slf4j-api:1.7.25',
+
+                //Json 2.x
+                'com.fasterxml.jackson.core:jackson-core:2.6.4',                    //流式的解析器和生成器
+                'com.fasterxml.jackson.core:jackson-annotations:2.6.4',             //带注释的数据绑定包
+                'com.fasterxml.jackson.core:jackson-databind:2.6.4',                //对象映射器，JSON树模型
+                'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.6.4',    //xml支持
+
+        )
+
+        //compile fileTree(dir: 'src/main/webapp/WEB-INF/lib', include: ['*.jar'])
+        testCompile(
+                'junit:junit:4.12',
+        )
+    }
+
+}

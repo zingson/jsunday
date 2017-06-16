@@ -1,2 +1,9 @@
 rootProject.name = 'jsunday-thh'
 
+include 'commons-utils'
+include 'commons-spring'
+include 'umq-config'
+include 'umq-mapper'
+include 'umq-service'
+include 'umq-rpcapi'
+include 'umq-deploy'
