@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!--
+配置说明 参考文档：http://git.oschina.net/free/Mybatis_Utils/blob/master/MybatisGeneator/MybatisGeneator.md#
+-->
+
+<generatorConfiguration>
+    <!--
+    包含以下子元素（有严格的顺序）：
+        <properties> (0个或1个)  全局变量配置
+        <classPathEntry> (0个或多个) 加载jar包,建议通过项目管理，不要在配置文件中配置
+        <context> (1个或多个)  生成代码配置
+    -->
+
+    <!--<classPathEntry location="D:\IdeaProjects\jsunday\@library\libs\ojdbc14.jar"></classPathEntry>-->
+
+    <!-- Oracle 数据库生成代码配置 -->
+    <context id="oracleContext" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!--  关闭自动生成的注释  -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <!-- 数据库连接信息 -->
+        <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@proxy.unionlive.com:31521:orcl"
+                        userId="unionlive"
+                        password="unionlive">
+        </jdbcConnection>
+
+        <!-- 类型解析 -->
+        <javaTypeResolver>
+            <!-- 不强制BigDecimals,自适配Oracle Number类型 -->
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.ul.biz.waimai.model" targetProject="E:\IdeaProjects\jsunday\jsunday-thh\mapper-generator\src\main\java">
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper.waimai"  targetProject="E:\IdeaProjects\jsunday\jsunday-thh\mapper-generator\src\main\resources"/>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ul.biz.waimai.mapper"  targetProject="E:\IdeaProjects\jsunday\jsunday-thh\mapper-generator\src\main\java"/>
+
+        <table tableName="ULTAB_WM_ORDERINFO" domainObjectName="WmOrderInfo">
+        </table>
+        <table tableName="ULTAB_WM_ORDERDETAIL" domainObjectName="WmOrderDetail">
+        </table>
+    </context>
+</generatorConfiguration>

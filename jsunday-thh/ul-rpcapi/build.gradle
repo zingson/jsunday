@@ -1,0 +1,14 @@
+group 'com.zingson.thh'
+version '1.0'
+
+apply plugin: 'java'
+
+jar{
+    //baseName = ''
+    version = '1.0'
+}
+
+dependencies {
+    compile project(':ul-service')
+
+}
