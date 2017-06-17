@@ -17,13 +17,13 @@ public class BaseJunitTest {
 
     @Before
     public void before(){
-        log.info("Before..........................");
+        log.info("Before >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 
     }
 
     @After
     public void after(){
-        log.info("After..........................");
+        log.info("After <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
     }
 
 }

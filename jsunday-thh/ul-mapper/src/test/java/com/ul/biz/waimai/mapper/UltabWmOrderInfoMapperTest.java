@@ -4,6 +4,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.ul.biz.waimai.model.WmOrderInfo;
 import com.ul.core.spring.BaseJunitTest;
+import com.ul.core.spring.PropertyConfig;
 import com.ul.core.utils.JsonUtil;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,7 @@ public class UltabWmOrderInfoMapperTest extends BaseJunitTest {
 
     @Test
     public void selectAll() throws Exception {
+
         PageHelper.startPage(1,3);
         Page<WmOrderInfo> page = (Page<WmOrderInfo>) wmOrderInfoMapper.selectAll();
 

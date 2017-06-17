@@ -17,16 +17,25 @@ import java.util.Properties;
  */
 public class PropertyConfig extends PropertyPlaceholderConfigurer {
 
-    public static final String DB1 = "db2";
+    /**
+     * 多数据源需求时定义的全局变量
+     */
+    public static final String DB1 = "db1";
     public static final String DB2 = "db2";
 
-    private static Properties properties;
+    /**
+     * 项目Properties配置文件
+     */
+    private static Properties properties = new Properties();
 
     public static Properties getProperties(){
         return properties;
     }
 
     public static String get(String key){
+        if(getProperties()==null){
+            throw new RuntimeException("ERROR: PropertyConfig.properties is null");
+        }
         return properties.getProperty(key);
     }
 
@@ -39,10 +48,12 @@ public class PropertyConfig extends PropertyPlaceholderConfigurer {
      */
     public void init(){
         try {
+            System.out.println(new ClassPathResource("/config").getPath());
+
             Resource resource = new ClassPathResource("db.properties");
             //Resource resource2 =  new FileSystemResource("E:\\IdeaProjects\\jsunday\\jsunday-thh\\ul-framework\\src\\main\\resources\\db.properties");
 
-            //加载项目下配置文件,这里不用spring xml文件加载，便于配置文件目录修改
+            //加载项目下配置文件,不用spring配置文件加载，便于全局读取
             super.setLocations(resource);
             properties = super.mergeProperties();
 
