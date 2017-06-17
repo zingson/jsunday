@@ -46,8 +46,9 @@ subprojects {
                 'com.fasterxml.jackson.core:jackson-databind:2.6.4',                //对象映射器，JSON树模型
                 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.6.4',    //xml支持
 
+                'org.apache.velocity:velocity:1.7',
         )
-
+        compile group: 'org.freemarker', name: 'freemarker', version: '2.3.23'
         //compile fileTree(dir: 'src/main/webapp/WEB-INF/lib', include: ['*.jar'])
         testCompile(
                 'junit:junit:4.12',

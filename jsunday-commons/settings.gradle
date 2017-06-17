@@ -1,5 +1,0 @@
-rootProject.name = 'jsunday-commons'
-include 'proxy'
-include 'velocity'
-include 'freemarker'
-

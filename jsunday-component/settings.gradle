@@ -5,3 +5,7 @@ include 'shiro'
 include 'proxy-server'
 include 'proxy-client'
 include 'graphql'
+include 'encrypt'
+
+include 'velocity'
+include 'freemarker'
