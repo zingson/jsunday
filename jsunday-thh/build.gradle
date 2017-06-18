@@ -104,7 +104,6 @@ subprojects {
                 //'javax.servlet:javax.servlet-api:3.1.0',
         )
         compile fileTree(dir: '../../@library/libs', include: ['ojdbc14.jar'])
-        //compile fileTree(dir: '../../@library/libs', include: ['mybatis-3.4.4-oracle.jar'])
         testCompile(
                 'junit:junit:4.12',
                 'org.springframework:spring-test:4.2.3.RELEASE',
