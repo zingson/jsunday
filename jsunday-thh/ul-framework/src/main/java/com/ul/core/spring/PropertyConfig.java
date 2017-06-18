@@ -48,7 +48,7 @@ public class PropertyConfig extends PropertyPlaceholderConfigurer {
      */
     public void init(){
         try {
-            System.out.println(new ClassPathResource("/config").getPath());
+            //System.out.println(new ClassPathResource("/config").getPath());
 
             Resource resource = new ClassPathResource("db.properties");
             //Resource resource2 =  new FileSystemResource("E:\\IdeaProjects\\jsunday\\jsunday-thh\\ul-framework\\src\\main\\resources\\db.properties");

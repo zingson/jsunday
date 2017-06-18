@@ -124,7 +124,7 @@
   </insert>
 
   <delete id="deleteByOrderId" parameterType="com.ul.biz.waimai.model.WmOrderInfo">
-    DELETE FROM ULTAB_WM_ORDERINFO WHERE ORDER_ID = #{orderId}
+    DELETE FROM ULTAB_WM_ORDERINFO WHERE ORDER_ID = #{orderId,jdbcType=CHAR}
   </delete>
 
   <select id="selectAll" resultMap="BaseResultMap">

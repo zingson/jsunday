@@ -20,6 +20,11 @@
         <setting name="returnInstanceForEmptyRow" value="false"></setting>
     </settings>
 
+    <typeHandlers>
+        <!--Oracle CHAR fix  -->
+        <typeHandler handler="com.ul.core.mybatis.OracleCharStringTypeHandler" javaType="String" jdbcType="CHAR" />
+    </typeHandlers>
+
     <plugins>
         <!-- 分页插件说明文档：https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md  -->
         <plugin interceptor="com.github.pagehelper.PageInterceptor">

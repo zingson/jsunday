@@ -41,13 +41,13 @@
             <property name="forceBigDecimals" value="false" />
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.ul.biz.waimai.model" targetProject="E:\IdeaProjects\jsunday\jsunday-thh\mapper-generator\src\main\java">
+        <javaModelGenerator targetPackage="com.ul.biz.waimai.model" targetProject="${src_main_java}">
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="mapper.waimai"  targetProject="E:\IdeaProjects\jsunday\jsunday-thh\mapper-generator\src\main\resources"/>
+        <sqlMapGenerator targetPackage="mapper.waimai"  targetProject="${src_main_resources}"/>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ul.biz.waimai.mapper"  targetProject="E:\IdeaProjects\jsunday\jsunday-thh\mapper-generator\src\main\java"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ul.biz.waimai.mapper"  targetProject="${src_main_java}"/>
 
         <table tableName="ULTAB_WM_ORDERINFO" domainObjectName="WmOrderInfo"></table>
         <table tableName="ULTAB_WM_ORDERDETAIL" domainObjectName="WmOrderDetail"></table>
