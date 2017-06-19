@@ -2,6 +2,7 @@ package com.ul.biz.waimai.mapper;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.ul.biz.waimai.model.Country;
 import com.ul.biz.waimai.model.WmOrderInfo;
 import com.ul.core.spring.BaseJunitTest;
 import com.ul.core.spring.PropertyConfig;
@@ -10,12 +11,16 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class UltabWmOrderInfoMapperTest extends BaseJunitTest {
 
     @Autowired(required = false)
     private WmOrderInfoMapper wmOrderInfoMapper;
+    @Autowired(required = false)
+    private CountryMapper countryMapper;
 
     @Test
     public void insert() throws Exception {
@@ -39,14 +44,20 @@ public class UltabWmOrderInfoMapperTest extends BaseJunitTest {
     @Test
     public void selectAll() throws Exception {
 
-        PageHelper.startPage(1,3);
-        Page<WmOrderInfo> page = (Page<WmOrderInfo>) wmOrderInfoMapper.selectAll();
+        //PageHelper.startPage(1,3);
+        List<WmOrderInfo> page = wmOrderInfoMapper.selectAll();
 
-        log.info(JsonUtil.obj2json(page));
-        log.info("Total={}",page.getTotal());
+        log.info(page.get(0).toString());
+        //log.info("Total={}",page.getTotal());
 
         assertEquals(3,page.size());
 
+    }
+
+    @Test
+    public void getCountryByCountryname() throws Exception {
+        Country c = countryMapper.getCountryByCountryname("Angola");
+        System.out.println(c);
     }
 
 }

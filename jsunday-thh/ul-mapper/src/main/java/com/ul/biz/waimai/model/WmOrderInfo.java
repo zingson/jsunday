@@ -690,4 +690,80 @@ public class WmOrderInfo {
     public void setShipperStatusText(String shipperStatusText) {
         this.shipperStatusText = shipperStatusText == null ? null : shipperStatusText.trim();
     }
+
+    @Override
+    public String toString() {
+        return "WmOrderInfo{" +
+                "orgId='" + orgId + '\'' +
+                ", mercId='" + mercId + '\'' +
+                ", shopId='" + shopId + '\'' +
+                ", shopName='" + shopName + '\'' +
+                ", channelOrderid='" + channelOrderid + '\'' +
+                ", orderId='" + orderId + '\'' +
+                ", viewOrderId='" + viewOrderId + '\'' +
+                ", timestamp='" + timestamp + '\'' +
+                ", orderDate='" + orderDate + '\'' +
+                ", orderTime='" + orderTime + '\'' +
+                ", confirmDate='" + confirmDate + '\'' +
+                ", confirmTime='" + confirmTime + '\'' +
+                ", traceNo='" + traceNo + '\'' +
+                ", status=" + status +
+                ", sendImmediately='" + sendImmediately + '\'' +
+                ", expectDate='" + expectDate + '\'' +
+                ", expectTime='" + expectTime + '\'' +
+                ", deliverAmount=" + deliverAmount +
+                ", packageAmount=" + packageAmount +
+                ", discountAmount=" + discountAmount +
+                ", shopAmount=" + shopAmount +
+                ", orderAmount=" + orderAmount +
+                ", userAmount=" + userAmount +
+                ", patType='" + patType + '\'' +
+                ", invoiceType=" + invoiceType +
+                ", invoiceTitle='" + invoiceTitle + '\'' +
+                ", deliveryType=" + deliveryType +
+                ", userName='" + userName + '\'' +
+                ", userPhone='" + userPhone + '\'' +
+                ", userSex=" + userSex +
+                ", userAddr='" + userAddr + '\'' +
+                ", longituedBd='" + longituedBd + '\'' +
+                ", latituedBd='" + latituedBd + '\'' +
+                ", longituedGd='" + longituedGd + '\'' +
+                ", latituedGd='" + latituedGd + '\'' +
+                ", shipperPhone='" + shipperPhone + '\'' +
+                ", shipperName='" + shipperName + '\'' +
+                ", channelId='" + channelId + '\'' +
+                ", deliverDate='" + deliverDate + '\'' +
+                ", deliverTime='" + deliverTime + '\'' +
+                ", cancelType=" + cancelType +
+                ", cancelReason='" + cancelReason + '\'' +
+                ", cancelDate='" + cancelDate + '\'' +
+                ", cancelTime='" + cancelTime + '\'' +
+                ", completeDate='" + completeDate + '\'' +
+                ", completeTime='" + completeTime + '\'' +
+                ", remark='" + remark + '\'' +
+                ", actId='" + actId + '\'' +
+                ", discountType='" + discountType + '\'' +
+                ", channelRate=" + channelRate +
+                ", shopRate=" + shopRate +
+                ", agentRate=" + agentRate +
+                ", logisticsRate=" + logisticsRate +
+                ", orderType=" + orderType +
+                ", umqProfitType=" + umqProfitType +
+                ", umqProfitAmount=" + umqProfitAmount +
+                ", cardNo='" + cardNo + '\'' +
+                ", orderSeq=" + orderSeq +
+                ", autoOrder=" + autoOrder +
+                ", deliveryStatus=" + deliveryStatus +
+                ", deliveryCnlReason=" + deliveryCnlReason +
+                ", lastTransDate='" + lastTransDate + '\'' +
+                ", lastTransTime='" + lastTransTime + '\'' +
+                ", noticeStatus=" + noticeStatus +
+                ", shopAutoOrder=" + shopAutoOrder +
+                ", channelShopId='" + channelShopId + '\'' +
+                ", statusText='" + statusText + '\'' +
+                ", shipperStatus='" + shipperStatus + '\'' +
+                ", shipperStatusText='" + shipperStatusText + '\'' +
+                '}';
+    }
+
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ul.biz.waimai.mapper.CountryMapper">
+    <resultMap id="Country" type="com.ul.biz.waimai.model.Country">
+        <result property="id" column="ID" jdbcType="CHAR"></result>
+        <result property="countryname" column="COUNTRYNAME" jdbcType="CHAR"></result>
+        <result property="countrycode" column="COUNTRYCODE" jdbcType="CHAR"></result>
+    </resultMap>
+
+    <select id="getCountryByCountryname" parameterType="String" resultMap="Country" >
+        SELECT * FROM country WHERE COUNTRYNAME = #{countryname,jdbcType=CHAR}
+    </select>
+
+</mapper>
