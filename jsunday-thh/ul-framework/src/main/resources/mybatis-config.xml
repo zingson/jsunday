@@ -45,7 +45,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com/unionlive/waimai/mapper/UltabWmOrderInfoMapper.xml"/>
-        <mapper resource="com/unionlive/waimai/mapper/UltabWmOrderDetailMapper.xml"/>
+        <mapper resource="com/unionlprojectimai/mapper/UltabWmOrderInfoMapper.xml"/>
+        <mapper resource="com/unionlprojectimai/mapper/UltabWmOrderDetailMapper.xml"/>
     </mappers>-->
 </configuration>

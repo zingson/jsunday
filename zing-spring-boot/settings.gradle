@@ -1,0 +1,22 @@
+rootProject.name = 'zing-spring-boot'
+
+include 'ul-configurer'
+include 'ul-deploy'
+include 'ul-waimai'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -5,7 +5,7 @@
     <Properties>
         <!--<property name="log_pattern">%d{yy-MM-dd HH:mm:ss.SS} %-5level [%class{36} %L %M ] %msg%xEx%n</property>-->
         <property name="log_pattern">%d{yy-MM-dd HH:mm:ss.SS} %-5level %msg%xEx%n</property>
-        <!--<property name="log_dir">${sys:catalina.home}/logs/waimai</property>-->
+        <!--<property name="log_dir">${sys:catalina.home}/lprojectimai</property>-->
         <property name="log_dir">/catalina.home/logs/jfain-jdbc</property>
     </Properties>
 
