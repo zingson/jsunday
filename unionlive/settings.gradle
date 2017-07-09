@@ -1,0 +1,10 @@
+rootProject.name = 'unionlive'
+
+
+include 'um-commons'
+include 'um-framework'
+include 'um-sdk-waimai'
+include 'um-rpc-waimai'
+include 'um-webapp'
+
+

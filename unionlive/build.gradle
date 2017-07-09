@@ -1,0 +1,60 @@
+group 'com.unionlive.umq'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'idea'
+idea {
+    project {
+        languageLevel = '1.8'
+        vcs = 'Git'
+    }
+}
+
+allprojects {
+
+    /*task createJavaProject << {
+        sourceSets*.java.srcDirs*.each { it.mkdirs() }
+        sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+    }
+    task createWebProject(dependsOn: 'createJavaProject') << {
+        def webAppDir = file("$webAppDirName")
+        webAppDir.mkdirs()
+    }*/
+
+}
+
+subprojects {
+    apply plugin: 'java'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    [compileJava,compileTestJava,javadoc]*.options*.encoding = 'UTF-8'
+    /*compileJava*.options*.compilerArgs=[*//*"-Xlint:unchecked",*//* "-g:vars", "-g:lines", "-g:source"]*/
+    compileJava*.options*.compilerArgs=["-Xlint:unchecked", "-g:vars", "-g:lines", "-g:source"]
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+        //maven { url 'http://maven.aliyun.com/nexus/content/groups/public'}
+        //maven { url 'https://repo1.maven.org/maven2' }
+        //个推APP消息推送sdk
+        maven { url 'http://mvn.gt.igexin.com/nexus/content/repositories/releases/'}
+    }
+
+    dependencies {
+        compile(
+                //log4j2
+                'org.apache.logging.log4j:log4j-api:2.8.1',
+                'org.apache.logging.log4j:log4j-core:2.8.1',
+                'org.apache.logging.log4j:log4j-slf4j-impl:2.8.1',
+                'org.slf4j:slf4j-api:1.7.25',
+
+        )
+        compile fileTree(dir: '../../@library/libs', include: ['ojdbc14.jar'])
+        testCompile(
+                'junit:junit:4.12',
+                'org.springframework:spring-test:4.2.3.RELEASE',
+        )
+    }
+
+}

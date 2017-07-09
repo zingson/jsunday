@@ -55,6 +55,12 @@ public class UltabWmOrderInfoMapperTest extends BaseJunitTest {
     }
 
     @Test
+    public void findOrderInfoById(){
+        WmOrderInfo orderInfo = wmOrderInfoMapper.findOrderInfoById("17011103240911503277");
+        System.out.println(orderInfo);
+    }
+
+    @Test
     public void getCountryByCountryname() throws Exception {
         Country c = countryMapper.getCountryByCountryname("Angola");
         System.out.println(c);

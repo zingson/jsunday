@@ -1,0 +1,4 @@
+
+dependencies {
+    compile project(':um-sdk-waimai')
+}

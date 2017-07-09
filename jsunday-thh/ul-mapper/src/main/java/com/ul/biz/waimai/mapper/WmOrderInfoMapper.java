@@ -14,4 +14,6 @@ public interface WmOrderInfoMapper {
     void deleteByOrderId(WmOrderInfo orderInfo);
 
     List<WmOrderInfo> selectAll();
+
+    WmOrderInfo findOrderInfoById(String orderId);
 }
