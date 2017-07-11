@@ -2,13 +2,39 @@ group 'com.zingson.jsunday'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'war'
+
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+[compileJava,compileTestJava,javadoc]*.options*.encoding = 'UTF-8'
+/*compileJava*.options*.compilerArgs=[*//*"-Xlint:unchecked",*//* "-g:vars", "-g:lines", "-g:source"]*/
+compileJava*.options*.compilerArgs=["-Xlint:unchecked", "-g:vars", "-g:lines", "-g:source"]
+
 
 repositories {
+    mavenLocal()
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public'}
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
+
+    compile(
+            //Tomcat embed
+            //'org.apache.tomcat.embed:tomcat-embed-core:8.5.16',
+            //'org.apache.tomcat.embed:tomcat-embed-el:8.5.16',
+            //'org.apache.tomcat.embed:tomcat-embed-jasper:8.5.16',
+            //'org.apache.tomcat.embed:tomcat-embed-websocket:8.5.16',
+
+            //'org.eclipse.jdt.core.compiler:ecj:4.6.1',
+
+            //Freemarker
+            'org.freemarker:freemarker:2.3.23',
+
+    )
+    compile fileTree(dir: '../@library/libs/tomcat8.5.16', include: ['*.jar'])
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
