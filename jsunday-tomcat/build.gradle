@@ -35,6 +35,6 @@ dependencies {
             'org.freemarker:freemarker:2.3.23',
 
     )
-    compile fileTree(dir: '../@library/libs/tomcat8.5.16', include: ['*.jar'])
+    compile fileTree(dir: '../@library/libs/apache-tomcat-8.5.20-embed', include: ['*.jar'])
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
